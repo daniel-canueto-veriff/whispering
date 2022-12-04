@@ -107,12 +107,12 @@ def get_opts() -> argparse.Namespace:
         type=str,
         choices=available_models(),
     )
-    group_model.add_argument(
-        "--language",
-        type=str,
-        choices=sorted(LANGUAGES.keys())
-        + sorted([k.title() for k in TO_LANGUAGE_CODE.keys()]),
-    )
+    # group_model.add_argument(
+    #     "--language",
+    #     type=str,
+    #     choices=sorted(LANGUAGES.keys())
+    #     + sorted([k.title() for k in TO_LANGUAGE_CODE.keys()]),
+    # )
     group_model.add_argument(
         "--device",
         default="cuda" if torch.cuda.is_available() else "cpu",
@@ -218,7 +218,8 @@ def get_opts() -> argparse.Namespace:
 def get_wshiper(*, opts) -> WhisperStreamingTranscriber:
     config = WhisperConfig(
         model_name=opts.model,
-        language=opts.language,
+       # language=opts.language,
+        language=None,
         device=opts.device,
     )
 
