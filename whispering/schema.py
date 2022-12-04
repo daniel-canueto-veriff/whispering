@@ -15,14 +15,14 @@ class WhisperConfig(BaseModel):
     language: str
     fp16: bool = True
 
-    @root_validator
-    def validate_model_name(cls, values):
-        if values["model_name"].endswith(".en") and values["language"] not in {
-            "en",
-            "English",
-        }:
-            raise ValueError("English only model")
-        return values
+    # @root_validator
+    # def validate_model_name(cls, values):
+    #     if values["model_name"].endswith(".en") and values["language"] not in {
+    #         "en",
+    #         "English",
+    #     }:
+    #         raise ValueError("English only model")
+    #     return values
 
 
 CURRENT_PROTOCOL_VERSION: Final[int] = int("000_006_003")
