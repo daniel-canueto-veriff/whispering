@@ -325,7 +325,7 @@ def main() -> None:
         except KeyboardInterrupt:
             pass
     elif opts.mode == Mode.server.value:
-        assert opts.language is not None
+        # assert opts.language is not None
         assert opts.model is not None
         wsp = get_wshiper(opts=opts)
         asyncio.run(
@@ -336,7 +336,7 @@ def main() -> None:
             )
         )
     else:
-        assert opts.language is not None
+        # assert opts.language is not None
         assert opts.model is not None
         wsp = get_wshiper(opts=opts)
         ctx: Context = get_context(opts=opts)
