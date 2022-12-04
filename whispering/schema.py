@@ -12,7 +12,7 @@ from whisper.audio import N_FRAMES
 class WhisperConfig(BaseModel):
     model_name: str
     device: str
-    language: str
+    language: None
     fp16: bool = True
 
     # @root_validator
